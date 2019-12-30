@@ -1,0 +1,45 @@
+{
+  "name": "duck-feeding-survey",
+  "version": "0.0.1",
+  "description": "A web application to survey duck feeding data",
+  "main": "dist/nodejs/bundle.js",
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.4.0",
+    "file-loader": "^5.0.2",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "jasmine-core": "^3.5.0",
+    "karma": "^4.4.1",
+    "karma-jasmine": "^2.0.1",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-webpack": "^4.0.2",
+    "phantomjs-prebuilt": "^2.1.16",
+    "style-loader": "^1.1.2",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  },
+  "scripts": {
+    "tests": "karma start",
+    "dev-web": "npx webpack-dev-server --config webpack.config.web.js",
+    "build-web": "npx webpack --config webpack.config.web.js",
+    "build-nodejs": "npx webpack --config webpack.config.node.js",
+    "start-nodejs": "nodemon ./dist/nodejs/bundle.js",
+    "dev-nodejs": "nodemon ./src/nodejs/main.js"
+  },
+  "keywords": [
+    "duck",
+    "feeding",
+    "survey"
+  ],
+  "author": "Andre Pestana",
+  "license": "MIT"
+}
