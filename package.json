@@ -4,7 +4,13 @@
   "description": "A web application to survey duck feeding data",
   "main": "dist/nodejs/bundle.js",
   "dependencies": {
-    
+    "angular": "1.7.x",
+    "angular-animate": "1.7.x",
+    "angular-resource": "1.7.x",
+    "angular-route": "1.7.x",
+    "angular-ui-router": "^1.0.24",
+    "bootstrap": "3.3.x",
+    "jquery": "3.3.x"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -21,6 +27,7 @@
     "karma-jasmine": "^2.0.1",
     "karma-phantomjs-launcher": "^1.0.4",
     "karma-webpack": "^4.0.2",
+    "nodemon": "^2.0.2",
     "phantomjs-prebuilt": "^2.1.16",
     "style-loader": "^1.1.2",
     "webpack": "^4.41.5",
@@ -29,7 +36,7 @@
   },
   "scripts": {
     "tests": "karma start",
-    "dev-web": "npx webpack-dev-server --config webpack.config.web.js",
+    "dev-web": "npx webpack-dev-server --config webpack.config.web.js --mode=development",
     "build-web": "npx webpack --config webpack.config.web.js",
     "build-nodejs": "npx webpack --config webpack.config.node.js",
     "start-nodejs": "nodemon ./dist/nodejs/bundle.js",
