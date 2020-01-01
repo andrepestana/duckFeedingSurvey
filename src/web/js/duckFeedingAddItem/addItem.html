@@ -1,0 +1,76 @@
+<h2 class="text-center">Add New Feeding</h2>
+
+
+
+<form name="feedingForm" novalidate ng-submit="vm.submit(feedingForm)">
+    
+    <label for="datepicker">Feeding Date</label>
+
+    <div>
+        <div uib-datepicker 
+             ng-model="vm.datepicker.dt" 
+             class="well well-sm" 
+             datepicker-options="vm.datepicker.options"
+             name="datepicker"
+             ng-change="vm.datepicker_validationMessage=null">
+        </div>
+    </div>
+
+    <div ng-messages="feedingForm.datepicker.$error" style="color:red">
+        <div ng-message="validationError">{{vm.datepicker_validationMessage}}</div>
+    </div>
+
+    <label for="timepicker">Feeding Time</label>
+    <div uib-timepicker 
+         ng-model="vm.timepicker.mytime" 
+         hour-step="vm.timepicker.hstep" 
+         minute-step="vm.timepicker.mstep" 
+         show-meridian="vm.timepicker.ismeridian"
+         name="timepicker"
+         ng-change="vm.timepicker_validationMessage=null">
+    </div>
+    <div ng-messages="feedingForm.timepicker.$error" style="color:red">
+        <div ng-message="validationError">{{vm.timepicker_validationMessage}}</div>
+    </div>
+
+    <label for="foodName">Food Name</label>
+    <input ng-model="vm.foodName" name="foodName" type="text" ng-change="vm.foodName_validationMessage=null"/>
+    <div ng-messages="feedingForm.foodName.$error" style="color:red">
+        <div ng-message="validationError">{{vm.foodName_validationMessage}}</div>
+    </div>
+
+    <label for="feedingLocation">Feeding Location</label>
+    <input ng-model="vm.feedingLocation" name="feedingLocation" type="text" ng-change="vm.feedingLocation_validationMessage=null"/>
+    <div ng-messages="feedingForm.feedingLocation.$error" style="color:red">
+        <div ng-message="validationError">{{vm.feedingLocation_validationMessage}}</div>
+    </div>
+
+    <label for="numberOfDucks">Number of Ducks</label>
+    <input ng-model="vm.numberOfDucks" name="numberOfDucks" type="number" ng-change="vm.numberOfDucks_validationMessage=null"/>
+    <div ng-messages="feedingForm.numberOfDucks.$error" style="color:red">
+        <div ng-message="validationError">{{vm.numberOfDucks_validationMessage}}</div>
+    </div>
+   
+    <label for="foodType">Food Type</label>
+    <input ng-model="vm.foodType" name="foodType" type="text" ng-change="vm.foodType_validationMessage=null"/>
+    <div ng-messages="feedingForm.foodType.$error" style="color:red">
+        <div ng-message="validationError">{{vm.foodType_validationMessage}}</div>
+    </div>
+
+    <label for="foodQuantity">Food Quantity</label>
+    <input ng-model="vm.foodQuantity" name="foodQuantity" type="number" ng-change="vm.foodQuantity_validationMessage=null"/> Kg
+    <div ng-messages="feedingForm.foodQuantity.$error" style="color:red">
+        <div ng-message="validationError">{{vm.foodQuantity_validationMessage}}</div>
+    </div>
+
+
+
+    <button type="submit">Submit</button>
+
+</form>
+
+<div class="footer">
+    <ul>
+        <li><a href="/#/home">Home</a></li>
+    </ul>
+</div>

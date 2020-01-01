@@ -47,7 +47,19 @@ module.exports = {
             }
           }
         ]
-       }       
+       },
+       {
+         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+         use: [
+           {
+             loader: 'file-loader',
+             options: {
+               name: '[name].[ext]',
+               outputPath: 'fonts/'
+             }
+           }
+         ]
+       }    
      ]
   },
   plugins: [ 
@@ -61,5 +73,7 @@ module.exports = {
 };
 new webpack.ProvidePlugin({
   $: 'jquery',
-    jQuery: 'jquery'
+  jQuery: 'jquery',
+  'window.jQuery': 'jquery',
+  Popper: ['popper.js', 'default']
 });

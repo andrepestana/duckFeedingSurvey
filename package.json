@@ -8,9 +8,12 @@
     "angular-animate": "1.7.x",
     "angular-resource": "1.7.x",
     "angular-route": "1.7.x",
+    "angular-ui-bootstrap": "^2.5.6",
     "angular-ui-router": "^1.0.24",
-    "bootstrap": "3.4.x",
-    "jquery": "3.4.x"
+    "bootstrap": "4.3.1",
+    "glyphicons": "^0.2.0",
+    "jquery": "3.4.x",
+    "popper.js": "^1.16.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -29,6 +32,7 @@
     "karma-webpack": "^4.0.2",
     "nodemon": "^2.0.2",
     "phantomjs-prebuilt": "^2.1.16",
+    "popper": "^1.0.1",
     "style-loader": "^1.1.2",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
