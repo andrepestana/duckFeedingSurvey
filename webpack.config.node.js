@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
+  target: "node",
   entry: './src/nodejs/main.js',
   output: {
     path: path.resolve(__dirname, 'dist/nodejs/'),

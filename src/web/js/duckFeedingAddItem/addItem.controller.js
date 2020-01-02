@@ -1,7 +1,7 @@
 import { DuckFeedingRecord } from "../../../common/duckFeedingRecord";
 
 export default class AddItemController {
-    constructor($scope, $log, duckFeedingService, $state, $timeout) {
+    constructor(duckFeedingService, $scope, $state) {
       this.$scope = $scope;
       this.datePicker = initiDatePicker();
       this.timepicker = initTimePicker();
@@ -12,7 +12,6 @@ export default class AddItemController {
       this.foodQuantity = 0;
       this.duckFeedingService = duckFeedingService;
       this.$state = $state;
-      this.$timeout = $timeout;
     }
     
     submit(form) {
@@ -86,7 +85,7 @@ export default class AddItemController {
       } 
     }
   }
-  AddItemController.$inject = ['$scope', '$log', 'duckFeedingService', '$state', '$timeout'];
+AddItemController.$inject = ['duckFeedingService','$scope','$state'];
   
   var initTimePicker = function() {
     

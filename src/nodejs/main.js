@@ -29,6 +29,7 @@ app.use(function(req, res, next) {
 
 app.use('/duckFeeding', duckFeedingRouter);
 
+//TODO get port from parameter
 var port = 1234;
 
 app.listen(port, () => {

@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
+const ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
 module.exports = {
   entry: './src/web/js/main.js',
   output: {
@@ -11,7 +11,7 @@ module.exports = {
   },
   devServer: {
     contentBase: path.join(__dirname, 'src/web'),
-    port: 8000,
+    port: 8001,
   },
   module: {
      rules: [
