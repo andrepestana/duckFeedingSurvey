@@ -1,4 +1,3 @@
-
 export class DuckFeedingRecord {
 
     constructor(feedingDate, feedingTime, foodName, feedingLocation, numberOfDucks, foodType, foodQuantity) {
@@ -23,6 +22,7 @@ export class DuckFeedingRecord {
         if(Object.prototype.toString.call(feedingDate) !== '[object Date]') {
             throw new Error("Feeding Date must be a selected Date");
         }
+        //TODO prevent future dates
     }
     static validateFeedingTime(feedingTime) {
         if(Object.prototype.toString.call(feedingTime) !== '[object Date]') {

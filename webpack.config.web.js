@@ -11,6 +11,7 @@ module.exports = {
   },
   devServer: {
     contentBase: path.join(__dirname, 'src/web'),
+    port: 8000,
   },
   module: {
      rules: [

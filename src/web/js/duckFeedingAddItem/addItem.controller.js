@@ -1,8 +1,7 @@
 import { DuckFeedingRecord } from "../../../common/duckFeedingRecord";
-import addItemService from "../services/addItem.service";
 
 export default class AddItemController {
-    constructor($scope, $log, addItemService) {
+    constructor($scope, $log, duckFeedingService, $state, $timeout) {
       this.$scope = $scope;
       this.datePicker = initiDatePicker();
       this.timepicker = initTimePicker();
@@ -11,58 +10,65 @@ export default class AddItemController {
       this.numberOfDucks = 1;
       this.foodType = '';
       this.foodQuantity = 0;
-      this.addItemService = addItemService;
+      this.duckFeedingService = duckFeedingService;
+      this.$state = $state;
+      this.$timeout = $timeout;
     }
     
     submit(form) {
-      console.log('submitting....');
-      console.log(this.addItemService);
       try {
         DuckFeedingRecord.validateFeedingDate(this.datepicker.dt);
+        form.datepicker.$setValidity('valid', true);
       } catch(e) {
-        form.datepicker.$setValidity('invalid', false);
+        form.datepicker.$setValidity('valid', false);
         this.datepicker_validationMessage = e; 
       }
 
       try {
         DuckFeedingRecord.validateFeedingTime(this.timepicker.mytime);
+        form.timepicker.$setValidity('valid', true);
       } catch(e) {
-        form.timepicker.$setValidity('invalid', false);
+        form.timepicker.$setValidity('valid', false);
         this.timepicker_validationMessage = e; 
       }
 
       try {
         DuckFeedingRecord.validateFoodName(this.foodName);
+        form.foodName.$setValidity('valid', true);
       } catch(e) {
-        form.foodName.$setValidity('invalid', false);
+        form.foodName.$setValidity('valid', false);
         this.foodName_validationMessage = e; 
       }
 
       try {
         DuckFeedingRecord.validateFeedingLocation(this.feedingLocation);
+        form.feedingLocation.$setValidity('valid', true);
       } catch(e) {
-        form.feedingLocation.$setValidity('invalid', false);
+        form.feedingLocation.$setValidity('valid', false);
         this.feedingLocation_validationMessage = e; 
       }
 
       try {
         DuckFeedingRecord.validateNumberOfDucks(this.numberOfDucks);
+        form.numberOfDucks.$setValidity('valid', true);
       } catch(e) {
-        form.numberOfDucks.$setValidity('invalid', false);
+        form.numberOfDucks.$setValidity('valid', false);
         this.numberOfDucks_validationMessage = e; 
       }
 
       try {
         DuckFeedingRecord.validateFoodType(this.foodType);
+        form.foodType.$setValidity('valid', true);
       } catch(e) {
-        form.foodType.$setValidity('invalid', false);
+        form.foodType.$setValidity('valid', false);
         this.foodType_validationMessage = e; 
       }
 
       try {
         DuckFeedingRecord.validateFoodQuantity(this.foodQuantity);
+        form.foodQuantity.$setValidity('valid', true);
       } catch(e) {
-        form.foodQuantity.$setValidity('invalid', false);
+        form.foodQuantity.$setValidity('valid', false);
         this.foodQuantity_validationMessage = e; 
       }
       console.log(this.datepicker);
@@ -75,11 +81,12 @@ export default class AddItemController {
                                                   this.foodType,
                                                   this.foodQuantity)
         console.log(feedingRecord);
-        this.addItemService.add(feedingRecord);
-      }
+        this.duckFeedingService.add(feedingRecord);
+        this.$state.go('addItemSuccess');
+      } 
     }
   }
-  AddItemController.$inject = ['$scope', '$log', 'addItemService'];
+  AddItemController.$inject = ['$scope', '$log', 'duckFeedingService', '$state', '$timeout'];
   
   var initTimePicker = function() {
     

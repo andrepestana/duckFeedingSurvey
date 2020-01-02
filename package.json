@@ -13,7 +13,11 @@
     "bootstrap": "4.3.1",
     "glyphicons": "^0.2.0",
     "jquery": "3.4.x",
-    "popper.js": "^1.16.0"
+    "popper.js": "^1.16.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.11",
+    "nodemon": "^2.0.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -30,7 +34,6 @@
     "karma-jasmine": "^2.0.1",
     "karma-phantomjs-launcher": "^1.0.4",
     "karma-webpack": "^4.0.2",
-    "nodemon": "^2.0.2",
     "phantomjs-prebuilt": "^2.1.16",
     "popper": "^1.0.1",
     "style-loader": "^1.1.2",

@@ -1,5 +1,24 @@
 <h2>Results</h2>
 
+<div class="row border border-primary">
+    <div class="col-3 font-weight-bold">Feeding Date & Time</div>
+    <div class="col-2 font-weight-bold">Food Name</div>
+    <div class="col-2 font-weight-bold">Location</div>
+    <div class="col-1 font-weight-bold">Ducks Qty</div>
+    <div class="col-2 font-weight-bold">Food Type</div>
+    <div class="col-2 font-weight-bold">Food Quantity</div>
+</div>
+<div class="row border border-primary" ng-repeat="duckFeedingItem in vm.results">
+    <div class="col-3">{{duckFeedingItem.feedingDate | date:'yyyy-MM-dd'}} {{duckFeedingItem.feedingTime | date:'HH:mm'}}</div>
+    <div class="col-2">{{duckFeedingItem.foodName}}</div>
+    <div class="col-2">{{duckFeedingItem.feedingLocation}}</div>
+    <div class="col-1">{{duckFeedingItem.numberOfDucks}}</div>
+    <div class="col-2">{{duckFeedingItem.foodType}}</div>
+    <div class="col-2">{{duckFeedingItem.foodQuantity}} kg</div>
+</div>
+
+
+
 <ul>
     <li><a href="/#/home">Home</a></li>
 </ul>
